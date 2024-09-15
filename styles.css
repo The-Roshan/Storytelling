@@ -1,0 +1,89 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #1e1e1e;
+    color: #ffffff;
+    overflow: hidden; /* Hide overflow for canvas */
+}
+
+.story-container {
+    position: relative;
+    z-index: 1; /* Ensure content is above the canvas */
+    height: 100vh;
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+
+.story-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    min-height: 100vh;
+    padding: 50px;
+    box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.5);
+    transition: opacity 1s ease-in-out;
+}
+
+.content {
+    text-align: center;
+    max-width: 800px;
+    z-index: 2;
+}
+
+h1, h2 {
+    margin: 0 0 20px;
+    font-size: 3rem;
+    color: #00e676;
+    text-shadow: 0 0 10px #00e676;
+}
+
+p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin: 0 auto 20px;
+    opacity: 1; /* Ensure text is fully visible */
+    transition: opacity 1s ease-in-out;
+}
+
+.story-section.visible p {
+    opacity: 1;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 15px 40px;
+    background-color: #00e676;
+    color: #1e1e1e;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button:hover {
+    background-color: #76ff03;
+    transform: translateY(-5px) scale(1.05);
+}
+
+.cta-button:active {
+    background-color: #64dd17;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px) scale(1);
+}
+
+.cta-button:focus {
+    outline: none;
+    box-shadow: 0 0 10px #76ff03;
+}
+
+#threeCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+}
